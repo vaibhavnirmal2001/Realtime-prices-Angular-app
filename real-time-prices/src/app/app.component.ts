@@ -23,14 +23,33 @@ export class AppComponent {
   current_time = this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds();
 
   data: any;
+  
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe(data => {
       this.data = data;
-    });
+    });  
   }
+
+
+
+  printAscData(){
+    this.data.sort((a:any, b:any) => (this.parseFloat(a.price.replace(/,/g, '')) < this.parseFloat(b.price.replace(/,/g, '')) ? -1 : 1));
+    console.log(this.data);
+
+  }
+
+  printDescData(){
+    this.data.sort((a:any, b:any) => (this.parseFloat(a.price.replace(/,/g, '')) > this.parseFloat(b.price.replace(/,/g, '')) ? -1 : 1));
+    console.log(this.data);
+
+  }
+
+  
+  
+  
   parseFloat(value: string): number {
     return parseFloat(value);
   }

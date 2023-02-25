@@ -1,0 +1,34 @@
+btn-span{
+    /* font-size: 1em;
+    padding: 3px;
+    margin: auto;
+    width: 3%; */
+}
+
+
+
+td span {
+    float: right;
+    font-size: 1em;
+    padding: 3px;
+    margin: auto;
+    width: 3%;
+
+}
+
+td span:first-child {
+    float: left;
+    
+}
+
+@media (min-width: 1200px) {
+    .responsive-font {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .responsive-font {
+        font-size: 1em;
+    }
+}
